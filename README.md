@@ -1,6 +1,6 @@
 # LinodeKit
 
-LinodeKit allows you to easily interact with the Linode API. To get started, get an [API Token](https://www.linode.com/docs/products/tools/cloud-manager/guides/cloud-api-keys) from your Linode account.
+LinodeKit allows you to easily interact with the [Linode](https://www.linode.com/) API. To get started, get an [API Token](https://www.linode.com/docs/products/tools/cloud-manager/guides/cloud-api-keys) from your Linode account.
 
 
 ## Setup & Basic Usage
