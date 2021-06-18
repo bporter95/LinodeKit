@@ -1,7 +1,7 @@
 import XCTest
 @testable import LinodeKit
 
-final class LinodeKitAccountTests: BaseLinodeKitTest {
+final class AccountTests: BaseLinodeKitTest {
     
     func testAccountView() {
         executedSucceeded(endpoint: .AccountView)

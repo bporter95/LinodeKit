@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  APIRequest.swift
 //  
 //
 //  Created by Benjamin Porter on 6/17/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIRequest {
+internal class APIRequest {
     var baseUrl:String = "https://api.linode.com/v4/"
     var endpoint:String
     var method:APIMethod

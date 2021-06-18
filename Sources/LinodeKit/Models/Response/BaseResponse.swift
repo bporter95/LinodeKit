@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BaseResponse.swift
 //  
 //
 //  Created by Benjamin Porter on 6/17/21.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  APIEndpoint.swift
 //  
 //
 //  Created by Benjamin Porter on 6/17/21.
@@ -8,9 +8,6 @@
 import Foundation
 
 struct APIEndpoint  {
-}
-
-extension APIEndpoint {
     struct Account {
         static let View = "account"
         
@@ -21,6 +18,14 @@ extension APIEndpoint {
             static func View(_ username:String) -> String {
                 return "\(base)/\(username)"
             }
+        }
+    }
+    
+    struct Linode {
+        static let base = "linode/instances"
+        static let List = base
+        static func View(_ linodeId:Int) -> String {
+            return "\(base)/\(linodeId)"
         }
     }
 }

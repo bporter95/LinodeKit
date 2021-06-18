@@ -1,6 +1,6 @@
 # LinodeKit
 
-LinodeKit allows you to easily interact with the [Linode](https://www.linode.com/) API. To get started, get an [API Token](https://www.linode.com/docs/products/tools/cloud-manager/guides/cloud-api-keys) from your Linode account.
+LinodeKit is an unofficial [Linode](https://www.linode.com/) SDK that allows you to easily interact with the [Linode API](https://www.linode.com/docs/api/) using Swift. To get started, get an [API Token](https://www.linode.com/docs/products/tools/cloud-manager/guides/cloud-api-keys) from your Linode account.
 
 
 ## Setup & Basic Usage
@@ -21,11 +21,17 @@ LinodeKit.Account.view { (account) in
 You can also set `LinodeKit.debug = true` to log networking traffic to the console
 
 
+# Installation
+To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Package Depedancy. Enter https://github.com/bporter95/LinodeKit for the URL and select the `main` branch
+
+
 # Supported Endpoints
 - Account.view()
 - Account.User.list()
 - Account.User.view(username)
 - Account.User.create(email,username,restricted)
+- Linode.list()
+- Linode.view(linodeId)
 
 
 

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BaseLinodeKitTest.swift
 //  
 //
 //  Created by Benjamin Porter on 6/17/21.
@@ -23,6 +23,9 @@ class BaseLinodeKitTest: XCTestCase {
         case UserList
         case UserView
         case UserCreate
+        
+        case LinodeList
+        case LinodeView
     }
     
     func executedSucceeded(endpoint:Endpoint) {
@@ -84,15 +87,23 @@ class BaseLinodeKitTest: XCTestCase {
     }
     
     private func performRequest(endpoint:Endpoint,success:@escaping (BaseResponse) -> Void,error:@escaping (APIError) -> Void) {
+        setToken()
+        
         switch endpoint {
         case .AccountView:
             LinodeKit.Account.view(success: success, error: error)
+            
         case .UserList:
             LinodeKit.Account.User.list(success: success, error: error)
         case .UserView:
             LinodeKit.Account.User.view(username:SeedUtil.username,success: success,error: error)
         case .UserCreate:
-            LinodeKit.Account.User.create(email: SeedUtil.randomEmail(), username: SeedUtil.randomUsername(), restricted: true,success: success,error: error)
+            LinodeKit.Account.User.create(email: SeedUtil.newEmail, username: SeedUtil.newUsername, restricted: true,success: success,error: error)
+            
+        case .LinodeList:
+            LinodeKit.Linode.list(success: success, error: error)
+        case .LinodeView:
+            LinodeKit.Linode.view(linodeId: SeedUtil.linodeId, success: success, error:error)
         }
     }
 }
