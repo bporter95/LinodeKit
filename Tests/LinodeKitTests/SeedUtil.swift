@@ -8,7 +8,14 @@
 import Foundation
 
 struct SeedUtil {
-    static let token = ""
+    static var token:String {
+        get {
+            if(ProcessInfo.processInfo.environment.keys.contains("API_TOKEN")){
+                return ProcessInfo.processInfo.environment["API_TOKEN"] ?? ""
+            }
+            return ""
+        }
+    }
     static let username = ""
     static let newUsername = ""
     static let newEmail = ""

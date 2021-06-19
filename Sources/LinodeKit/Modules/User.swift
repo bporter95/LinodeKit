@@ -10,10 +10,15 @@ import Foundation
 extension LinodeKit.Account {
     struct User {
         /// Returns a paginated list of Users on your Account. Users may access all or part of your Account based on their restricted status and grants. An unrestricted User may access everything on the account, whereas restricted User may only access entities or perform actions they’ve been given specific grants to.
-       /// - Parameter success: Success block that returns the PagedResponse where data is a list of UserModels
-       /// - Parameter error: Error block that returns APIError model
-        static func list(success:@escaping(PagedResponse<[UserModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.User.List, method: .Get)
+        /// - Parameter page: Page number
+        /// - Parameter pageSize: Number of items to return per page
+        /// - Parameter success: Success block that returns the PagedResponse where data is a list of UserModels
+        /// - Parameter error: Error block that returns APIError model
+        static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[UserModel]>) -> Void,error:((APIError) -> Void)? = nil) {
+            let request = APIRequest(endpoint: APIEndpoint.Account.User.List, method: .Get, parameters: [
+                APIParameter(key: "page", value: "\(page)"),
+                APIParameter(key: "page_size", value: "\(pageSize)")
+            ])
             LinodeKit.submit(request:request,success:success,error:error)
 
         }

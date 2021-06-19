@@ -11,6 +11,7 @@ import XCTest
 class BaseLinodeKitTest: XCTestCase {
     
     func setToken() {
+        print(SeedUtil.token)
         LinodeKit.token = SeedUtil.token
     }
     

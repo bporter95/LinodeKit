@@ -10,10 +10,15 @@ import Foundation
 extension LinodeKit {
     struct Linode {
         /// Returns a paginated list of Linodes you have permission to view.
-       /// - Parameter success: Success block that returns the PagedResponse where data is a list of LinodeModels
-       /// - Parameter error: Error block that returns APIError model
-        static func list(success:@escaping(PagedResponse<[LinodeModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Linode.List, method: .Get)
+        /// - Parameter page: Page number
+        /// - Parameter pageSize: Number of items to return per page
+        /// - Parameter success: Success block that returns the PagedResponse where data is a list of LinodeModels
+        /// - Parameter error: Error block that returns APIError model
+        static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[LinodeModel]>) -> Void,error:((APIError) -> Void)? = nil) {
+            let request = APIRequest(endpoint: APIEndpoint.Linode.List, method: .Get, parameters: [
+                APIParameter(key: "page", value: "\(page)"),
+                APIParameter(key: "page_size", value: "\(pageSize)")
+            ])
             LinodeKit.submit(request:request,success:success,error:error)
         }
         
