@@ -1,6 +1,6 @@
 import Foundation
 
-struct LinodeKit {
+public struct LinodeKit {
     
     
     internal static func getDefaults() -> UserDefaults? {
