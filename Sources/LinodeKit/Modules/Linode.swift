@@ -8,13 +8,13 @@
 import Foundation
 
 extension LinodeKit {
-    struct Linode {
+    public struct Linode {
         /// Returns a paginated list of Linodes you have permission to view.
         /// - Parameter page: Page number
         /// - Parameter pageSize: Number of items to return per page
         /// - Parameter success: Success block that returns the PagedResponse where data is a list of LinodeModels
         /// - Parameter error: Error block that returns APIError model
-        static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[LinodeModel]>) -> Void,error:((APIError) -> Void)? = nil) {
+        public static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[LinodeModel]>) -> Void,error:((APIError) -> Void)? = nil) {
             let request = APIRequest(endpoint: APIEndpoint.Linode.List, method: .Get, parameters: [
                 APIParameter(key: "page", value: "\(page)"),
                 APIParameter(key: "page_size", value: "\(pageSize)")
@@ -26,7 +26,7 @@ extension LinodeKit {
         /// - Parameter linodeId: Id of the linode you would like to retrieve
         /// - Parameter success: Success block that returns the LinodeModel
         /// - Parameter error: Error block that returns APIError model
-        static func view(_ linodeId:Int,success:@escaping(LinodeModel) -> Void,error:((APIError) -> Void)? = nil) {
+        public static func view(_ linodeId:Int,success:@escaping(LinodeModel) -> Void,error:((APIError) -> Void)? = nil) {
             let request = APIRequest(endpoint: APIEndpoint.Linode.View(linodeId), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct LinodeModel : Codable {
+public struct LinodeModel : Codable {
     
-    struct Specs : Codable {
+    public struct Specs : Codable {
         var disk:Int
         var memory:Int
         var vcpus:Int
@@ -17,7 +17,7 @@ struct LinodeModel : Codable {
         var transfer:Int
     }
     
-    struct Alerts : Codable {
+    public struct Alerts : Codable {
         var cpu:Int
         var network_in:Int
         var network_out:Int
@@ -25,12 +25,12 @@ struct LinodeModel : Codable {
         var io:Int
     }
     
-    struct Backups : Codable {
+    public struct Backups : Codable {
         var enabled:Bool
         var last_successful:String?
         var schedule:Schedule
         
-        struct Schedule : Codable {
+        public struct Schedule : Codable {
             var day:String?
             var window:String?
         }

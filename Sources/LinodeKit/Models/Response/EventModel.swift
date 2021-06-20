@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct EventModel: BaseResponse {
+public struct EventModel: BaseResponse {
     
-    struct Entity : BaseResponse {
+    public struct Entity : BaseResponse {
         let id:Int?
         let label:String?
         let type:String

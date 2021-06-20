@@ -12,5 +12,5 @@ public struct LinodeKitError: Codable,Equatable {
 }
 
 public struct APIError : Codable,Equatable {
-    var errors:[LinodeKitError]
+    public var errors:[LinodeKitError]
 }

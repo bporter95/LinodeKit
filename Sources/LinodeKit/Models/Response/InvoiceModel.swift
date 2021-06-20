@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InvoiceModel: BaseResponse {
+public struct InvoiceModel: BaseResponse {
     let date:String
     let id:Int
     let label:String

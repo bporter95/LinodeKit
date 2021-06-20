@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PagedResponse<T:Codable> : BaseResponse {
+public struct PagedResponse<T:Codable> : BaseResponse {
     var data:T
     var page:Int
     var pages:Int

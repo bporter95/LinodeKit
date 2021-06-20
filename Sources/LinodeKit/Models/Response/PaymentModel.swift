@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PaymentModel: BaseResponse {
+public struct PaymentModel: BaseResponse {
     let date:String
     let id:Int
     let usd:Double

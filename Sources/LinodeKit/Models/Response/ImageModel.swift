@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageModel: BaseResponse {
+public struct ImageModel: BaseResponse {
     let created:String
     let created_by:String
     let deprecated:Bool

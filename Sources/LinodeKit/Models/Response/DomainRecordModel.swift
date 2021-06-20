@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DomainRecordModel: BaseResponse {
+public struct DomainRecordModel: BaseResponse {
     let created:String
     let id:Int
     let name:String

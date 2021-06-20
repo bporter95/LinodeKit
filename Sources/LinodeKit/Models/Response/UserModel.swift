@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct UserModel:BaseResponse {
+public struct UserModel:BaseResponse {
     var username:String
     var email:String
     var restricted:Bool

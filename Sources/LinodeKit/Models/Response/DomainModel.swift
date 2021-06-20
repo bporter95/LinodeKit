@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DomainModel: BaseResponse {
+public struct DomainModel: BaseResponse {
     let axfr_ips: [String]?
     let description: String?
     let domain: String
