@@ -26,10 +26,22 @@ To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Pac
 
 
 # Supported Endpoints
-- Account.view()
+- Account.Event.list()
+- Account.Event.view(eventId)
+- Account.Invoice.list()
+- Account.Invoice.view(invoiceId)
+- Account.Payment.list()
+- Account.Payment.view(paymentId)
 - Account.User.list()
 - Account.User.view(username)
 - Account.User.create(email,username,restricted)
+- Account.view()
+- Domain.list()
+- Domain.view(domainId)
+- DomainRecord.list(domainId)
+- DomainRecord.view(domainId, recordId)
+- Image.list()
+- Image.view(imageId)
 - Linode.list()
 - Linode.view(linodeId)
 
