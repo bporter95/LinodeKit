@@ -3,7 +3,7 @@ import Foundation
 public struct LinodeKit {
     
     
-    internal static func getDefaults() -> UserDefaults? {
+    static func getDefaults() -> UserDefaults? {
         let suiteName = "LinodeKit"
         return UserDefaults.init(suiteName: suiteName)
     }
