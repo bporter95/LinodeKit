@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class APIRequest {
+public class APIRequest {
     var baseUrl:String = "https://api.linode.com/v4/"
     var endpoint:String
     var method:APIMethod

@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct LinodeKitError: Codable,Equatable {
+public struct LinodeKitError: Codable,Equatable {
     var reason:String
 }
 
-struct APIError : Codable,Equatable {
+public struct APIError : Codable,Equatable {
     var errors:[LinodeKitError]
 }

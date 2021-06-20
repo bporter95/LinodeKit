@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AccountModel : BaseResponse {
+public struct AccountModel : BaseResponse {
     var company:String
     var email:String
     var first_name:String
