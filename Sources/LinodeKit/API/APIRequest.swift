@@ -11,7 +11,7 @@ internal class APIRequest {
     var baseUrl:String = "https://api.linode.com/v4/"
     var endpoint:String
     var method:APIMethod
-    var parameters: [String : String]
+    var parameters: [String : Codable]
     var endpointSuffix: String
     
     init(endpoint:String,method:APIMethod, parameters:[APIParameter] = [], endpointSuffix:String = "") {

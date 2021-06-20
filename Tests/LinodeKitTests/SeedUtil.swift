@@ -16,8 +16,6 @@ struct SeedUtil {
             return ""
         }
     }
-    static let username = ""
-    static let newUsername = ""
-    static let newEmail = ""
-    static let linodeId = 0
+    static let newUsername = "bporter95"
+    static let newEmail = "benjaminporter@me.com"
 }

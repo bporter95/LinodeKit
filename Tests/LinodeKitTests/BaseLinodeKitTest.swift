@@ -19,24 +19,15 @@ class BaseLinodeKitTest: XCTestCase {
         LinodeKit.token = ""
     }
     
-    enum Endpoint {
-        case AccountView
-        case UserList
-        case UserView
-        case UserCreate
-        
-        case LinodeList
-        case LinodeView
-    }
-    
-    func executedSucceeded(endpoint:Endpoint) {
+    func executedSucceeded(endpoint:Endpoint, callback:((BaseResponse) -> Void)? = nil) {
         
         var executed = false
         var succeeded = false
             
-        let success:(BaseResponse) -> Void = {_ in
+        let success:(BaseResponse) -> Void = {res in
             executed = true
             succeeded = true
+            callback?(res)
         }
         
         let error:(APIError) -> Void = {_ in
@@ -96,15 +87,45 @@ class BaseLinodeKitTest: XCTestCase {
             
         case .UserList:
             LinodeKit.Account.User.list(success: success, error: error)
-        case .UserView:
-            LinodeKit.Account.User.view(username:SeedUtil.username,success: success,error: error)
+        case .UserView(let username):
+            LinodeKit.Account.User.view(username,success: success,error: error)
         case .UserCreate:
             LinodeKit.Account.User.create(email: SeedUtil.newEmail, username: SeedUtil.newUsername, restricted: true,success: success,error: error)
             
         case .LinodeList:
             LinodeKit.Linode.list(success: success, error: error)
-        case .LinodeView:
-            LinodeKit.Linode.view(linodeId: SeedUtil.linodeId, success: success, error:error)
+        case .LinodeView(let linodeId):
+            LinodeKit.Linode.view(linodeId, success: success, error:error)
+            
+        case .EventList:
+            LinodeKit.Event.list(success: success, error: error)
+        case .EventView(let id):
+            LinodeKit.Event.view(id, success: success, error:error)
+            
+        case .InvoiceList:
+            LinodeKit.Invoice.list(success: success, error: error)
+        case .InvoiceView(let id):
+            LinodeKit.Invoice.view(id, success: success, error:error)
+            
+        case .PaymentList:
+            LinodeKit.Payment.list(success: success, error: error)
+        case .PaymentView(let id):
+            LinodeKit.Payment.view(id, success: success, error:error)
+        
+        case .DomainList:
+            LinodeKit.Domain.list(success: success, error: error)
+        case .DomainView(let id):
+            LinodeKit.Domain.view(id, success: success, error:error)
+            
+        case .DomainRecordList(let domainId):
+            LinodeKit.DomainRecord.list(domainId, success: success, error: error)
+        case .DomainRecordView(let domainId, let recordId):
+            LinodeKit.DomainRecord.view(domainId: domainId, recordId: recordId, success: success, error:error)
+            
+        case .ImageList:
+            LinodeKit.Image.list(success: success, error: error)
+        case .ImageView(let id):
+            LinodeKit.Image.view(id, success: success, error:error)
         }
     }
 }

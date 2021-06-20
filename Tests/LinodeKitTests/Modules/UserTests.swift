@@ -4,12 +4,17 @@ import XCTest
 final class UserTests: BaseLinodeKitTest {
     
     func testUserList() {
-        executedSucceeded(endpoint: .UserList)
+        executedSucceeded(endpoint: .UserList) { res in
+        if let users = res as? PagedResponse<[UserModel]>, let user = users.data.first {
+            Settings.set(key: .username, value: user.username)
+        }
+    }
     }
     
     func testUserView() {
-        XCTAssert(!SeedUtil.username.isEmpty,"Must set username in SeedUtil")
-        executedSucceeded(endpoint: .UserView)
+        let username = (Settings.get(key: .username) as? String) ?? ""
+        executedSucceeded(endpoint: .UserView(username:username))
+        Settings.clear()
     }
     
     func testUserCreate_FailedWithError() {

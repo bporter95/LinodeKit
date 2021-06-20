@@ -27,7 +27,7 @@ extension LinodeKit.Account {
         /// - Parameter username: Username of the user you would like to retrieve
         /// - Parameter success: Success block that returns the UserModel
         /// - Parameter error: Error block that returns APIError model
-        static func view(username:String, success:@escaping(UserModel) -> Void,error:((APIError) -> Void)? = nil) {
+        static func view(_ username:String, success:@escaping(UserModel) -> Void,error:((APIError) -> Void)? = nil) {
             let request = APIRequest(endpoint: APIEndpoint.Account.User.View(username), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }

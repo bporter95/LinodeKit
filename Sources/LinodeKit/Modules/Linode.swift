@@ -26,7 +26,7 @@ extension LinodeKit {
         /// - Parameter linodeId: Id of the linode you would like to retrieve
         /// - Parameter success: Success block that returns the LinodeModel
         /// - Parameter error: Error block that returns APIError model
-        static func view(linodeId:Int,success:@escaping(LinodeModel) -> Void,error:((APIError) -> Void)? = nil) {
+        static func view(_ linodeId:Int,success:@escaping(LinodeModel) -> Void,error:((APIError) -> Void)? = nil) {
             let request = APIRequest(endpoint: APIEndpoint.Linode.View(linodeId), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }

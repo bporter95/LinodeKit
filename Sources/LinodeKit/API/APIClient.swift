@@ -27,7 +27,7 @@ struct APIClient {
         
         if req.method == .Get {
             components.queryItems = req.parameters.map {
-                URLQueryItem(name: String($0), value: String($1))
+                URLQueryItem(name: String($0), value: "\($1)")
             }
             request.url = components.url
         }
@@ -55,7 +55,7 @@ struct APIClient {
         task.resume()
     }
     
-    static func postStringForDict(dict:Dictionary<String,String>)->Data{
+    static func postStringForDict(dict:Dictionary<String,Codable>)->Data{
         do{
             let string = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
             return string
