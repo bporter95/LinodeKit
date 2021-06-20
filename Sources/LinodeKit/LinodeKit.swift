@@ -8,7 +8,7 @@ public struct LinodeKit {
         return UserDefaults.init(suiteName: suiteName)
     }
     
-    static var debug:Bool {
+    public static var debug:Bool {
         get {
             return getDefaults()?.bool(forKey: "debug") ?? false
         }
@@ -17,7 +17,7 @@ public struct LinodeKit {
         }
     }
     
-    static var token:String {
+    public static var token:String {
         get {
             getDefaults()?.string(forKey: "Authorization") ?? ""
         }
@@ -26,7 +26,7 @@ public struct LinodeKit {
         }
     }
     
-    static func submit<T:Codable>(request:APIRequest, success:@escaping(T) -> Void,error:((APIError) -> Void)? = nil) {
+    public static func submit<T:Codable>(request:APIRequest, success:@escaping(T) -> Void,error:((APIError) -> Void)? = nil) {
         APIClient.submit(req: request) { (res) in
             if let user = res.decode(type: T.self) {
                 success(user)
