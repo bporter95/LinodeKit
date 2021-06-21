@@ -22,7 +22,7 @@ You can also set `LinodeKit.debug = true` to log networking traffic to the conso
 
 
 # Installation
-To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Package Depedancy. Enter https://github.com/bporter95/LinodeKit for the URL and select the `main` branch
+To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Package Depedancy. Enter https://github.com/bporter95/LinodeKit for the URL. You can define which version range you want, or use the `main` branch.
 
 
 # Supported Endpoints
