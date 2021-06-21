@@ -20,7 +20,7 @@ public struct AccountModel : BaseResponse {
     var country:String
     var phone:String
     var balance:Double
-    var tax_id:String
+    var tax_id:String?
     var credit_card:CreditCard
     var balance_uninvoiced:Double
     var active_since:String

@@ -21,7 +21,7 @@ public struct EventModel: BaseResponse {
     let duration:Double?
     let entity:Entity
     let id:Int
-    let message:String
+    let message:String?
     let percent_complete:Double?
     let rate:String?
     let read: Bool

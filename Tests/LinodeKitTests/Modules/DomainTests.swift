@@ -22,9 +22,27 @@ final class DomainTests: BaseLinodeKitTest {
         let domainId:Int = (Settings.get(key: .domainId) as? Int) ?? 0
         executed(endpoint: .DomainView(id: domainId))
     }
+    
+    func testDomainRecordList() {
+        let id = (Settings.get(key: .domainId) as? Int) ?? 0
+        self.executedSucceeded(endpoint: .DomainRecordList(domainId:id)) { res in
+            if let records = res as? PagedResponse<[DomainRecordModel]>, let record = records.data.first {
+                Settings.set(key: .domainRecordId, value: record.id)
+            }
+        }
+    }
+    
+    func testDomainRecordView() {
+        let domainId:Int = (Settings.get(key: .domainId) as? Int) ?? 0
+        let recordId:Int = (Settings.get(key: .domainRecordId) as? Int) ?? 0
+        executed(endpoint: .DomainRecordView(domainId: domainId, recordId:recordId))
+        Settings.clear()
+    }
 
     static var allTests = [
         ("testDomainList", testDomainList),
-        ("testDomainView", testDomainView)
+        ("testDomainView", testDomainView),
+        ("testDomainRecordList", testDomainRecordList),
+        ("testDomainRecordView", testDomainRecordView)
     ]
 }

@@ -28,7 +28,7 @@ public struct LinodeModel : Codable {
     public struct Backups : Codable {
         var enabled:Bool
         var last_successful:String?
-        var schedule:Schedule
+        var schedule:Schedule?
         
         public struct Schedule : Codable {
             var day:String?
@@ -45,8 +45,8 @@ public struct LinodeModel : Codable {
     var updated:String
     var type:String
     var ipv4:[String]
-    var ipv6:String
-    var image:String
+    var ipv6:String?
+    var image:String?
     var region:String
     var hypervisor:String
     var watchdog_enabled:Bool

@@ -13,6 +13,7 @@ public struct DomainRecordModel: BaseResponse {
     let name:String
     let port:Int
     let priority:Int
+    let `protocol`: String?
     let service:String?
     let tag:String?
     let target:String
