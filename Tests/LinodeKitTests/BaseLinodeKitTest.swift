@@ -126,6 +126,27 @@ class BaseLinodeKitTest: XCTestCase {
             LinodeKit.Image.list(success: success, error: error)
         case .ImageView(let id):
             LinodeKit.Image.view(id, success: success, error:error)
+            
+        case .LinodeTypeList:
+            LinodeKit.LinodeType.list(success: success, error: error)
+        case .LinodeTypeView(let typeId):
+            LinodeKit.LinodeType.view(typeId, success: success, error:error)
+            
+            
+        case .NodeBalancerList:
+            LinodeKit.NodeBalancer.list(success: success, error: error)
+        case .NodeBalancerView(let id):
+            LinodeKit.NodeBalancer.view(id, success: success, error:error)
+            
+        case .ObjectStorageBucketList:
+            LinodeKit.ObjectStorageBucket.list(success: success, error: error)
+        case .ObjectStorageBucketView(let clusterId, let bucket):
+            LinodeKit.ObjectStorageBucket.view(clusterId: clusterId, bucket: bucket, success: success, error:error)
+            
+        case .VolumeList:
+            LinodeKit.Volume.list(success: success, error: error)
+        case .VolumeView(let id):
+            LinodeKit.Volume.view(id, success: success, error:error)
         }
     }
 }

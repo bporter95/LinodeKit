@@ -44,6 +44,14 @@ To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Pac
 - Image.view(imageId)
 - Linode.list()
 - Linode.view(linodeId)
+- LinodeType.list()
+- LinodeType.view(id)
+- NodeBalancer.list()
+- NodeBalancer.view(id)
+- ObjectStorageBucket.list()
+- ObjectStorageBucket.view(cluster,bucket)
+- Volumes.list()
+- Volumes.view(id)
 
 
 

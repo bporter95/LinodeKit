@@ -15,11 +15,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the PagedResponse where data is a list of LinodeModels
         /// - Parameter error: Error block that returns APIError model
         public static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[LinodeModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Linode.List, method: .Get, parameters: [
-                APIParameter(key: "page", value: "\(page)"),
-                APIParameter(key: "page_size", value: "\(pageSize)")
-            ])
-            LinodeKit.submit(request:request,success:success,error:error)
+            LinodeKit.list(endpoint: APIEndpoint.Linode().List(), page: page, pageSize: pageSize,success: success,error: error)
         }
         
         /// Get a specific Linode by ID.
@@ -27,7 +23,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the LinodeModel
         /// - Parameter error: Error block that returns APIError model
         public static func view(_ linodeId:Int,success:@escaping(LinodeModel) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Linode.View(linodeId), method: .Get)
+            let request = APIRequest(endpoint: APIEndpoint.Linode().View(linodeId), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }
     }

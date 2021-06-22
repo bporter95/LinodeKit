@@ -13,13 +13,13 @@ final class PaymentTests: BaseLinodeKitTest {
     func testPaymentList() {
         executedSucceeded(endpoint: .PaymentList) { res in
             if let payments = res as? PagedResponse<[PaymentModel]>, let payment = payments.data.first {
-                Settings.set(key: .paymentId, value: payment.id)
+                Settings.set(key: .id, value: payment.id)
             }
         }
     }
     
     func testPaymentView() {
-        let paymentId:Int = (Settings.get(key: .paymentId) as? Int) ?? 0
+        let paymentId:Int = (Settings.get(key: .id) as? Int) ?? 0
         executed(endpoint: .PaymentView(id: paymentId))
         Settings.clear()
     }

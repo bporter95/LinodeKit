@@ -6,13 +6,13 @@ final class LinodeTests: BaseLinodeKitTest {
     func testLinodeList() {
         executedSucceeded(endpoint: .LinodeList) { res in
             if let linodes = res as? PagedResponse<[LinodeModel]>, let linode = linodes.data.first {
-                Settings.set(key: .linodeId, value: linode.id)
+                Settings.set(key: .id, value: linode.id)
             }
         }
     }
     
     func testLinodeView() {
-        let id = (Settings.get(key: .linodeId) as? Int) ?? 0
+        let id = (Settings.get(key: .id) as? Int) ?? 0
         executedSucceeded(endpoint: .LinodeView(id:id))
         Settings.clear()
     }

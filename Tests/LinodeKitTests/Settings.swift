@@ -10,14 +10,12 @@ import Foundation
 struct Settings {
     
     enum Keys : String, CaseIterable {
-        case eventId = "eventId"
-        case linodeId = "linodeId"
+        case id = "id"
         case username = "username"
-        case invoiceId = "invoiceId"
-        case paymentId = "paymentId"
         case domainId = "domainId"
         case domainRecordId = "domainRecordId"
-        case imageId = "imageId"
+        case objectStorageBucketId = "objectStorageBucketId"
+        case objectStorageClusterId = "objectStorageClusterId"
     }
     
     static let settings = UserDefaults.init(suiteName: "LinodeKit_Tests")

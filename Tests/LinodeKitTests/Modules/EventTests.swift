@@ -13,13 +13,13 @@ final class EventTests: BaseLinodeKitTest {
     func testEventList() {
         executedSucceeded(endpoint: .EventList) { res in
             if let events = res as? PagedResponse<[EventModel]>, let event = events.data.first {
-                Settings.set(key: .eventId, value: event.id)
+                Settings.set(key: .id, value: event.id)
             }
         }
     }
     
     func testEventView() {
-        let eventId:Int = (Settings.get(key: .eventId) as? Int) ?? 0
+        let eventId:Int = (Settings.get(key: .id) as? Int) ?? 0
         executed(endpoint: .EventView(id: eventId))
         Settings.clear()
     }

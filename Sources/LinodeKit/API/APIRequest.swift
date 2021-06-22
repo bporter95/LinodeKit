@@ -8,7 +8,7 @@
 import Foundation
 
 public class APIRequest {
-    var baseUrl:String = "https://api.linode.com/v4/"
+    var baseUrl:String = "https://api.linode.com/v4"
     var endpoint:String
     var method:APIMethod
     var parameters: [String : Codable]

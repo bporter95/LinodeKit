@@ -15,12 +15,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the PagedResponse where data is a list of PaymentModels
         /// - Parameter error: Error block that returns APIError model
         public static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[PaymentModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.Payments.List, method: .Get, parameters: [
-                APIParameter(key: "page", value: "\(page)"),
-                APIParameter(key: "page_size", value: "\(pageSize)")
-            ])
-            LinodeKit.submit(request:request,success:success,error:error)
-
+            LinodeKit.list(endpoint: APIEndpoint.Account.Payments().List(), page: page, pageSize: pageSize,success: success,error: error)
         }
         
         /// Returns information about a specific Payment.
@@ -28,7 +23,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the UserModel
         /// - Parameter error: Error block that returns APIError model
         public static func view(_ paymentId:Int, success:@escaping(PaymentModel) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.Payments.View(paymentId), method: .Get)
+            let request = APIRequest(endpoint: APIEndpoint.Account.Payments().View(paymentId), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }
     }

@@ -17,6 +17,9 @@ extension BaseLinodeKitTest {
         case LinodeList
         case LinodeView(id:Int)
         
+        case LinodeTypeList
+        case LinodeTypeView(id:String)
+        
         case EventList
         case EventView(id:Int)
         
@@ -34,5 +37,14 @@ extension BaseLinodeKitTest {
         
         case ImageList
         case ImageView(id:Int)
+        
+        case ObjectStorageBucketList
+        case ObjectStorageBucketView(clusterId:String, bucket: String)
+        
+        case NodeBalancerList
+        case NodeBalancerView(id:Int)
+        
+        case VolumeList
+        case VolumeView(id:Int)
     }
 }

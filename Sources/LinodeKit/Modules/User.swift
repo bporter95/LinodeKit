@@ -15,12 +15,7 @@ extension LinodeKit.Account {
         /// - Parameter success: Success block that returns the PagedResponse where data is a list of UserModels
         /// - Parameter error: Error block that returns APIError model
         public static func list(page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[UserModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.User.List, method: .Get, parameters: [
-                APIParameter(key: "page", value: "\(page)"),
-                APIParameter(key: "page_size", value: "\(pageSize)")
-            ])
-            LinodeKit.submit(request:request,success:success,error:error)
-
+            LinodeKit.list(endpoint: APIEndpoint.Account.User().List(), page: page, pageSize: pageSize,success: success,error: error)
         }
         
         /// Returns information about a single User on your Account.
@@ -28,7 +23,7 @@ extension LinodeKit.Account {
         /// - Parameter success: Success block that returns the UserModel
         /// - Parameter error: Error block that returns APIError model
         public static func view(_ username:String, success:@escaping(UserModel) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.User.View(username), method: .Get)
+            let request = APIRequest(endpoint: APIEndpoint.Account.User().View(username), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }
         
@@ -39,7 +34,7 @@ extension LinodeKit.Account {
         /// - Parameter success: Success block that returns the UserModel of the newly created user
         /// - Parameter error: Error block that returns APIError model
         public static func create(email:String,username:String, restricted:Bool,success:@escaping(UserModel) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.Account.User.Create, method: .Post)
+            let request = APIRequest(endpoint: APIEndpoint.Account.User().Create(), method: .Post)
             LinodeKit.submit(request:request,success:success,error:error)
         }
     }

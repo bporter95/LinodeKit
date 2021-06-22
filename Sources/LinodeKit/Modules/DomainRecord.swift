@@ -16,12 +16,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the PagedResponse where data is a list of DomainModels
         /// - Parameter error: Error block that returns APIError model
         public static func list(_ domainId:Int, page:Int = 1, pageSize: Int = 100, success:@escaping(PagedResponse<[DomainRecordModel]>) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.DomainRecords.List(domainId: domainId), method: .Get, parameters: [
-                APIParameter(key: "page", value: "\(page)"),
-                APIParameter(key: "page_size", value: "\(pageSize)")
-            ])
-            LinodeKit.submit(request:request,success:success,error:error)
-
+            LinodeKit.list(endpoint: APIEndpoint.DomainRecords().List(domainId: domainId), page: page, pageSize: pageSize,success: success,error: error)
         }
         
         /// This is a single Domain that you have registered in Linode’s DNS Manager. Linode is not a registrar, and in order for this Domain record to work you must own the domain and point your registrar at Linode’s nameservers.
@@ -30,7 +25,7 @@ extension LinodeKit {
         /// - Parameter success: Success block that returns the UserModel
         /// - Parameter error: Error block that returns APIError model
         public static func view(domainId:Int, recordId:Int, success:@escaping(DomainRecordModel) -> Void,error:((APIError) -> Void)? = nil) {
-            let request = APIRequest(endpoint: APIEndpoint.DomainRecords.View(domainId: domainId, recordId: recordId), method: .Get)
+            let request = APIRequest(endpoint: APIEndpoint.DomainRecords().View(domainId: domainId, recordId: recordId), method: .Get)
             LinodeKit.submit(request:request,success:success,error:error)
         }
     }
