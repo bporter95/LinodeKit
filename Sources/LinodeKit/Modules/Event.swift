@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension LinodeKit {
+extension LinodeKit.Account {
     public struct Event {
         /// Returns a collection of Event objects representing actions taken on your Account from the last 90 days. The Events returned depend on your grants.
         /// - Parameter page: Page number

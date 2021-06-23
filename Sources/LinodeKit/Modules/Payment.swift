@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension LinodeKit {
+extension LinodeKit.Account {
     public struct Payment {
         /// Returns a paginated list of Payments made on this Account.
         /// - Parameter page: Page number

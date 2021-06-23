@@ -98,19 +98,19 @@ class BaseLinodeKitTest: XCTestCase {
             LinodeKit.Linode.view(linodeId, success: success, error:error)
             
         case .EventList:
-            LinodeKit.Event.list(success: success, error: error)
+            LinodeKit.Account.Event.list(success: success, error: error)
         case .EventView(let id):
-            LinodeKit.Event.view(id, success: success, error:error)
+            LinodeKit.Account.Event.view(id, success: success, error:error)
             
         case .InvoiceList:
-            LinodeKit.Invoice.list(success: success, error: error)
+            LinodeKit.Account.Invoice.list(success: success, error: error)
         case .InvoiceView(let id):
-            LinodeKit.Invoice.view(id, success: success, error:error)
+            LinodeKit.Account.Invoice.view(id, success: success, error:error)
             
         case .PaymentList:
-            LinodeKit.Payment.list(success: success, error: error)
+            LinodeKit.Account.Payment.list(success: success, error: error)
         case .PaymentView(let id):
-            LinodeKit.Payment.view(id, success: success, error:error)
+            LinodeKit.Account.Payment.view(id, success: success, error:error)
         
         case .DomainList:
             LinodeKit.Domain.list(success: success, error: error)
