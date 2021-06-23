@@ -8,7 +8,7 @@
 import Foundation
 
 public struct LinodeKitError: Codable,Equatable {
-    var reason:String
+    public var reason:String
 }
 
 public struct APIError : Codable,Equatable {
