@@ -8,10 +8,10 @@
 import Foundation
 
 public struct InvoiceModel: BaseResponse {
-    let date:String
-    let id:Int
-    let label:String
-    let subtotal:Double
-    let tax:Double
-    let total:Double
+    public let date:String
+    public let id:Int
+    public let label:String
+    public let subtotal:Double
+    public let tax:Double
+    public let total:Double
 }

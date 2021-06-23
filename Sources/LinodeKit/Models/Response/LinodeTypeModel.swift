@@ -10,30 +10,30 @@ import Foundation
 public struct LinodeTypeModel:BaseResponse {
     
     public struct Price: BaseResponse {
-        let hourly:Double
-        let monthly:Double
+        public let hourly:Double
+        public let monthly:Double
     }
     
     public struct Addons: BaseResponse {
         public struct Backups:BaseResponse {
-            let price:Price
+            public let price:Price
         }
         
-        let backups:Backups
+        public let backups:Backups
         
     }
     
-    let addons:Addons
-    let `class`:String
-    let disk:Int
-    let gpus:Int
-    let id:String
-    let label:String
-    let memory:Int
-    let network_out:Int
-    let price: Price
-    let successor:String?
-    let transfer:Int
-    let vcpus:Int
+    public let addons:Addons
+    public let `class`:String
+    public let disk:Int
+    public let gpus:Int
+    public let id:String
+    public let label:String
+    public let memory:Int
+    public let network_out:Int
+    public let price: Price
+    public let successor:String?
+    public let transfer:Int
+    public let vcpus:Int
     
 }

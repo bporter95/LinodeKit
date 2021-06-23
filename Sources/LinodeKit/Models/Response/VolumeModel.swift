@@ -8,15 +8,15 @@
 import Foundation
 
 public struct VolumeModel: BaseResponse {
-    let created:String
-    let filesystem_path:String
-    let id:Int
-    let label:String
-    let linode_id:Int?
-    let linode_label:String?
-    let region:String
-    let size:Int
-    let status:String
-    let tags:[String]
-    let updated:String
+    public let created:String
+    public let filesystem_path:String
+    public let id:Int
+    public let label:String
+    public let linode_id:Int?
+    public let linode_label:String?
+    public let region:String
+    public let size:Int
+    public let status:String
+    public let tags:[String]
+    public let updated:String
 }

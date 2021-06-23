@@ -8,10 +8,10 @@
 import Foundation
 
 public struct ObjectStorageBucketModel: BaseResponse {
-    let cluster:String
-    let created:String
-    let hostname:String
-    let label:String
-    let objects:Int
-    let size:Int
+    public let cluster:String
+    public let created:String
+    public let hostname:String
+    public let label:String
+    public let objects:Int
+    public let size:Int
 }

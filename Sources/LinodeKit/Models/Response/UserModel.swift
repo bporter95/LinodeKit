@@ -7,9 +7,9 @@
 
 import Foundation
 public struct UserModel:BaseResponse {
-    var username:String
-    var email:String
-    var restricted:Bool
-    var ssh_keys:[String]
-    var tfa_enabled:Bool
+    public let username:String
+    public let email:String
+    public let restricted:Bool
+    public let ssh_keys:[String]
+    public let tfa_enabled:Bool
 }

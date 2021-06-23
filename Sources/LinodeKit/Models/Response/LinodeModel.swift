@@ -10,48 +10,48 @@ import Foundation
 public struct LinodeModel : Codable {
     
     public struct Specs : Codable {
-        var disk:Int
-        var memory:Int
-        var vcpus:Int
-        var gpus:Int
-        var transfer:Int
+        public let disk:Int
+        public let memory:Int
+        public let vcpus:Int
+        public let gpus:Int
+        public let transfer:Int
     }
     
     public struct Alerts : Codable {
-        var cpu:Int
-        var network_in:Int
-        var network_out:Int
-        var transfer_quota:Int
-        var io:Int
+        public let cpu:Int
+        public let network_in:Int
+        public let network_out:Int
+        public let transfer_quota:Int
+        public let io:Int
     }
     
     public struct Backups : Codable {
-        var enabled:Bool
-        var last_successful:String?
-        var schedule:Schedule?
+        public let enabled:Bool
+        public let last_successful:String?
+        public let schedule:Schedule?
         
         public struct Schedule : Codable {
-            var day:String?
-            var window:String?
+            public let day:String?
+            public let window:String?
         }
         
     }
     
-    var id:Int
-    var label:String
-    var group:String
-    var status:String
-    var created:String
-    var updated:String
-    var type:String
-    var ipv4:[String]
-    var ipv6:String?
-    var image:String?
-    var region:String
-    var hypervisor:String
-    var watchdog_enabled:Bool
-    var tags:[String]
-    var specs:Specs
-    var alerts:Alerts
-    var backups:Backups
+    public let id:Int
+    public let label:String
+    public let group:String
+    public let status:String
+    public let created:String
+    public let updated:String
+    public let type:String
+    public let ipv4:[String]
+    public let ipv6:String?
+    public let image:String?
+    public let region:String
+    public let hypervisor:String
+    public let watchdog_enabled:Bool
+    public let tags:[String]
+    public let specs:Specs
+    public let alerts:Alerts
+    public let backups:Backups
 }

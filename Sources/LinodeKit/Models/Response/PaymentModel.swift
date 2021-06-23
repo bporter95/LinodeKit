@@ -8,7 +8,7 @@
 import Foundation
 
 public struct PaymentModel: BaseResponse {
-    let date:String
-    let id:Int
-    let usd:Double
+    public let date:String
+    public let id:Int
+    public let usd:Double
 }

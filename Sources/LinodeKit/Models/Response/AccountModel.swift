@@ -8,29 +8,29 @@
 import Foundation
 
 public struct AccountModel : BaseResponse {
-    var company:String
-    var email:String
-    var first_name:String
-    var last_name:String
-    var address_1:String
-    var address_2:String
-    var city:String
-    var state:String
-    var zip:String
-    var country:String
-    var phone:String
-    var balance:Double
-    var tax_id:String?
-    var credit_card:CreditCard
-    var balance_uninvoiced:Double
-    var active_since:String
-    var capabilities:[String]
-    var active_promotions:[String]
-    var euuid:String
+    public let company:String
+    public let email:String
+    public let first_name:String
+    public let last_name:String
+    public let address_1:String
+    public let address_2:String
+    public let city:String
+    public let state:String
+    public let zip:String
+    public let country:String
+    public let phone:String
+    public let balance:Double
+    public let tax_id:String?
+    public let credit_card:CreditCard
+    public let balance_uninvoiced:Double
+    public let active_since:String
+    public let capabilities:[String]
+    public let active_promotions:[String]
+    public let euuid:String
     
-    struct CreditCard : Codable {
-        var last_four:String
-        var expiry:String
+    public struct CreditCard : Codable {
+        public let last_four:String
+        public let expiry:String
     }
 }
 

@@ -8,18 +8,18 @@
 import Foundation
 
 public struct ImageModel: BaseResponse {
-    let created:String
-    let created_by:String
-    let deprecated:Bool
-    let description:String?
-    let eol:String?
-    let expiry:String?
-    let id:String
-    let is_public:Bool
-    let label:String
-    let size:Int
-    let status:String?
-    let type:String
-    let updated:String?
-    let vendor:String
+    public let created:String
+    public let created_by:String
+    public let deprecated:Bool
+    public let description:String?
+    public let eol:String?
+    public let expiry:String?
+    public let id:String
+    public let is_public:Bool
+    public let label:String
+    public let size:Int
+    public let status:String?
+    public let type:String
+    public let updated:String?
+    public let vendor:String
 }

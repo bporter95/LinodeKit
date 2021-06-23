@@ -10,20 +10,20 @@ import Foundation
 public struct NodeBalancerModel: BaseResponse {
     
     public struct Transfer: BaseResponse {
-        let `in`: Double
-        let out: Double
-        let total: Double
+        public let `in`: Double
+        public let out: Double
+        public let total: Double
     }
     
-    let client_conn_throttle:Int
-    let created: String
-    let hostname: String
-    let id: Int
-    let ipv4: String
-    let ipv6: String?
-    let label: String
-    let region: String
-    let tags: [String]
-    let transfer: Transfer
-    let updated: String
+    public let client_conn_throttle:Int
+    public let created: String
+    public let hostname: String
+    public let id: Int
+    public let ipv4: String
+    public let ipv6: String?
+    public let label: String
+    public let region: String
+    public let tags: [String]
+    public let transfer: Transfer
+    public let updated: String
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 public struct PagedResponse<T:Codable> : BaseResponse {
-    var data:T
-    var page:Int
-    var pages:Int
-    var results:Int
+    public let data:T
+    public let page:Int
+    public let pages:Int
+    public let results:Int
 }
