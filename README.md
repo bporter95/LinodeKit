@@ -53,6 +53,8 @@ To add LinodeKit to your Xcode project, select File -> Swift Packages -> Add Pac
 - Volumes.list()
 - Volumes.view(id)
 
+Looking for an endpoint that is not listed? Create an issue so it can be added in a future release
+
 
 
 Enjoy LinodeKit? [Buy me a cold brew](https://venmo.com/code?user_id=2086648682643456668&printed=1)
